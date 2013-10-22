@@ -2,9 +2,9 @@ require 'redcarpet'
 require_relative './markdown_question_parser/parser'
 require_relative './markdown_question_parser/markdown'
 
-class QuestionDetector
+class QuestionProcessor
   def initialize(raw)
-    detect!(raw)
+    process!(raw)
   end
 
   def answers
@@ -16,7 +16,7 @@ class QuestionDetector
   end
 
   private
-  def detect!(raw)
+  def process!(raw)
     markdown = Redcarpet::Markdown.new(MarkdownQuestionParser::Markdown)
     markdown.render(raw)
     @renderer = markdown.renderer
