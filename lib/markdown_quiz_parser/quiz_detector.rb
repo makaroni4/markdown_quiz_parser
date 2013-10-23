@@ -13,7 +13,7 @@ module MarkdownQuizParser
 
     private
     def process!(raw)
-      markdown = Redcarpet::Markdown.new(MarkdownQuizParser::Markdown)
+      markdown = Redcarpet::Markdown.new(MarkdownQuizParser::Markdown, fenced_code_blocks: true)
       markdown.render(raw)
       @renderer = markdown.renderer
     end
