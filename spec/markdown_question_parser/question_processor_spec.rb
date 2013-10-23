@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative '../lib/question_processor'
+require_relative '../../lib/markdown_question_parser/question_processor'
 
-describe QuestionProcessor do
-  let(:question_processor) { QuestionProcessor.new(text) }
+describe MarkdownQuestionParser::QuestionProcessor do
+  let(:question_processor) { MarkdownQuestionParser::QuestionProcessor.new(text) }
 
   context 'for check box quiz' do
     let(:text) {
